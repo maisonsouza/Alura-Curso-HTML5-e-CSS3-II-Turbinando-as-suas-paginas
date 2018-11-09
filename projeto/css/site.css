@@ -13,7 +13,8 @@ h2,
 
 h1 {
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 3em;
+    text-shadow: 2px 2px #000;
 }
 
 .titulo-principal {
@@ -131,4 +132,5 @@ main {
     top: 0;
     right: 0;
     height: 300px;
+
 }
