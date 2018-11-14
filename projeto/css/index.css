@@ -6,8 +6,8 @@ html, body {
 body {
     perspective: 6px;
     perspective-origin: 50% 160px;
+    display: block;
 }
-
 
 .foto-home {
     height: 200px;
@@ -83,13 +83,7 @@ body {
     background-color: #3C1D3D;
     border-top: .5em solid #000;
     border-bottom: .5em solid #000;
-    background-image: linear-gradient(135deg,
-    transparent,
-    transparent 14px,
-    rgba(0, 0, 0, 0.1) 14px,
-    rgba(0, 0, 0, 0.1) 15px,
-    transparent 15px,
-    transparent);
+    background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0, 0, 0, .1) 14px, rgba(0, 0, 0, .1) 15px, transparent 15px, transparent);
     background-size: 20px 20px;
     background-attachment: fixed;
 }
@@ -99,13 +93,25 @@ body {
 }
 
 .trabalhos ul {
-    overflow: hidden;
-    border: .5em solid black;
+    display: flex;
 }
 
 .trabalhos li {
-    float: left;
-    width: 33.333%;
+    flex: 1;
+    border: .5em solid #000;
+}
+
+.trabalhos li:first-child {
+    order: 2;
+    transform: scale(1.2);
+}
+
+.trabalhos li:nth-child(2) {
+    order: 1;
+}
+
+.trabalhos li:nth-child(3) {
+    order: 3;
 }
 
 .trabalhos img {
@@ -146,12 +152,13 @@ body {
 }
 
 /*.blog .mais-recente{*/
-    /*background-color: #F2FFFC;*/
+/*background-color: #F2FFFC;*/
 /*}*/
 
 .blog .mais-recente a {
     color: #F26;
 }
+
 footer {
     background-color: #000;
     color: #FFF;
@@ -169,10 +176,10 @@ footer a {
 main {
     width: 100%;
     padding-bottom: 0;
-    float: none;
+    flex-grow: 1;
 }
 
-.inicio-post{
+.inicio-post {
     position: absolute;
     top: 4em;
     height: 8em;
@@ -183,6 +190,7 @@ main {
     padding: 1.5em;
     display: none
 }
+
 .palavra-home {
     font-family: "Shadows Into Light", cursive;
     font-weight: bold;
@@ -210,6 +218,7 @@ main {
 .palavras-home li {
     font-size: 400%;
 }
+
 .eficiencia {
     top: 50%;
     left: 60%;
@@ -290,7 +299,7 @@ main {
 .saudacao em {
     color: #851944;
     font-size: 4em;
-    transform: rotate(-5deg)skew(-10deg);
+    transform: rotate(-5deg) skew(-10deg);
     display: inline-block;
 }
 
@@ -340,10 +349,12 @@ main {
     padding: 1.5em;
     display: none;
 }
+
 .blog a:hover + .inicio-post,
 .blog a:focus + .inicio-post {
     display: block;
 }
+
 .blog a:hover,
 .blog a:focus {
     background-color: #F2FFFC;
